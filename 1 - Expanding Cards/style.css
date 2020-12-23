@@ -1,0 +1,110 @@
+/* Copied from fonts.google.com */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+/* Apply to everything on page */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    display: flex; /* Creates flex box. Defaults to horizontal lists */
+    /* flex-direction: column;  Adjust flex to go vertical */
+    align-items: center; /*  */
+    justify-content: center; /* */
+    height: 100vh; /* Sets flex box height. View port height = take up the entire height of the browser */
+    overflow: hidden; /* Hide scroll bars by default */
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 90vw; /* View port width 90/100 */
+}
+
+.panel {
+    background-size: cover 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px; /* Makes image corners curved */
+    color: #ffffff;
+    cursor: pointer; /* When cursor is over panel, change to pointer */
+    flex: 0.5; /* Size of flex */
+    margin: 10px;
+    position: relative; /* Position h3 inside absolute */
+    transition: flex 0.7s ease-in; /* Set ease-in transition on flex */
+    
+}
+
+/* Position panel h3s to the bottom left, but make it invisible since it's not selected yet */
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+/* If panel div has an active class. If panel is active, expand width to 5 */
+.panel.active {
+    flex: 5;
+}
+
+/* If panel is active, make h3 visible */
+.panel.active h3 {
+    opacity: 1;
+    /* Add transition on opacity with .4s delay. Added otherwise text will have that weird falling animation as the box stretches */
+    transition: opacity 0.3s ease-in .65s
+}
+
+/* If screen is small, reduce card to 3. Will only take effect if screen is at a max of 480 pixels
+   !Webpage originally wasn't removing the last 2 pics when shrunken, but it was because edge can't seem to have a width less than 480 pixels. Adjusting max to higher pixel fixes this for testing purposes.
+*/
+@media (max-width: 680px) {
+    .container {
+        width: 100vw;
+    }
+
+    /* Remove last 2 panels (Panels 4 and 5) */
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+      display: none;
+    }
+}
+
+/*
+Notes
+
+https://medium.com/better-programming/a11y-never-remove-the-outlines-ee4efc7a9968
+Remove outline is bad practice since users who only use keyboard can no longer tab through things without knowing where the cursor is.
+Can use this JS workaround so that outline only appears when key is pressed, but disappears when mouse is used again.
+
+(function(document, window){
+	if (!document || !window) {
+		return;
+	}
+	
+	var styleText = '::-moz-focus-inner{border:0 !important;}:focus{outline: none !important;';
+	var unfocus_style = document.createElement('STYLE');
+
+	window.unfocus = function(){
+		document.getElementsByTagName('HEAD')[0].appendChild(unfocus_style);
+
+		document.addEventListener('mousedown', function(){
+			unfocus_style.innerHTML = styleText+'}';
+		});
+		document.addEventListener('keydown', function(){
+			unfocus_style.innerHTML = '';
+		});
+	};
+
+	unfocus.style = function(style){
+		styleText += style;
+	};
+
+	unfocus();
+})(document, window);
+*/
