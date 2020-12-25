@@ -1,7 +1,7 @@
 const progress = document.getElementById('progress')
 const prev = document.getElementById('prev')
 const next = document.getElementById('next')
-const circles = document.querySelectorAll('.circle') // . before circle means take all circles
+const circles = document.querySelectorAll('.circle') // . before circle means take all circles 
 
 let currentActive = 1
 
