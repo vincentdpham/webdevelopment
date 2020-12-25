@@ -7,8 +7,17 @@
     <title>Progress Steps</title>
 </head>
 <body>
-    <h1>Progress Steps</h1>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <div class="container">
+        <div class="progress-container"> <!-- This is the blue meter. Needs faint gray line behind it -->
+            <div class="progress" id="progress"></div> 
+            <div class="circle active">1</div>
+            <div class="circle">2</div>
+            <div class="circle">3</div>
+            <div class="circle">4</div>
+        </div>
+
+        <button class="btn" id="prev" disabled>Prev</button>
+        <button class="btn" id="next" enabled>Next</button>
     <script src="script.js"></script>
 </body>
 </html>
