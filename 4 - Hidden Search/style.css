@@ -1,0 +1,61 @@
+/* Copied from fonts.google.com */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+/* Apply to everything on page */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(90deg, #7d5fff,#7158e2);
+    font-family: 'Roboto', sans-serif;
+    display: flex; /* Creates flex box. Defaults to horizontal lists */
+    align-items: center; /*  */
+    justify-content: center; /* */
+    height: 100vh; /* Sets flex box height. View port height = take up the entire height of the browser */
+    overflow: hidden; /* Hide scroll bars by default */
+    margin: 0;
+}
+
+.search {
+    position: relative;
+    height: 50px;
+}
+
+.search .input {
+    background-color: #fff;
+    border: 0;
+    font-size: 18px;
+    padding: 15px;
+    height: 50px;
+    width: 50px; /* start off with text box collapsed */
+    transition: width 0.3s ease;
+}
+
+/* button w/ icon */
+.btn {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease; /* Button will need to be pushed over during transition as text box gets wider */
+}
+
+/* Not a good idea to get rid of outline */
+.btn:focus, .input:focus {
+    outline: none;
+}
+
+/* If search class has active class, then input should go to 200px */
+.search.active .input {
+    width: 200px;
+}
+
+.search.active .btn {
+    transform: translateX(198px); /* Move button along X axis */
+}
