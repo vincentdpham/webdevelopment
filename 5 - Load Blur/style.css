@@ -1,0 +1,33 @@
+/* Copied from fonts.google.com */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu');
+
+/* Apply to everything on page */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    display: flex; /* Creates flex box. Defaults to horizontal lists */
+    align-items: center; /*  */
+    justify-content: center; /* */
+    height: 100vh; /* Sets flex box height. View port height = take up the entire height of the browser */
+    overflow: hidden; /* Hide scroll bars by default */
+    margin: 0;
+}
+
+.bg {
+    background: url('img/bg.gif') no-repeat center center/cover;
+    position: absolute;
+    top: -30; /* Was 0, adjusted to current value to prevent blur edges */
+    left: -30;
+    width: calc(100vw + 60px);
+    height: calc(100vh + 60px);
+    z-index: -1; /* Place behind % text */
+    filter: blur(0px); /* Max blur value is 30, not 100 */
+}
+
+.loading-text {
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+}
