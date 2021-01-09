@@ -33,10 +33,6 @@ body {
     cursor: pointer;
 }
 
-.btn btn2 {
-    background-color: red;
-}
-
 .btn:focus {
     outline: none;
 }

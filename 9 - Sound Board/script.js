@@ -10,11 +10,13 @@ btn2.addEventListener('click', () => {
     if(overlap == 0){
         overlap = 1
         btn2.innerText = "Overlap On"
+        btn2.setAttribute("on")
     }
     else
     {
         btn2.innerText = "Overlap Off"
         overlap = 0
+        btn2.setAttribute("off")
     }
 })
 
