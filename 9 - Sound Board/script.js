@@ -3,6 +3,8 @@ var overlap = 0
 
 const btn2 = document.createElement('button')
 btn2.classList.add('btn')
+btn2.style.background='#0000ff'
+
 btn2.innerText = "Overlap Off"
 document.getElementById('buttons').appendChild(btn2)
 
@@ -10,13 +12,13 @@ btn2.addEventListener('click', () => {
     if(overlap == 0){
         overlap = 1
         btn2.innerText = "Overlap On"
-        btn2.setAttribute("on")
+        btn2.style.background='#ff0000'
     }
     else
     {
         btn2.innerText = "Overlap Off"
         overlap = 0
-        btn2.setAttribute("off")
+        btn2.style.background='#0000ff'
     }
 })
 
