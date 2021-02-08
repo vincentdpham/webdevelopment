@@ -1,9 +1,6 @@
-const left = document.querySelector('.left')
-const right = document.querySelector('.right')
-const container = document.querySelector('.container')
+const open = document.getElementById('open')
+const close = document.getElementById('close')
+const container = document.querySelector('.container') // . = class
 
-left.addEventListener('mouseenter', () => container.classList.add('hover-left'))
-left.addEventListener('mouseleave', () => container.classList.remove('hover-left'))
-
-right.addEventListener('mouseenter', () => container.classList.add('hover-right'))
-right.addEventListener('mouseleave', () => container.classList.remove('hover-right'))
+open.addEventListener('click', () => container.classList.add('show-nav'))
+close.addEventListener('click', () => container.classList.remove('show-nav'))
