@@ -1,57 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css">
-    <title>Rotating Navigation Animation</title>
-</head>
-<body>
-    <div class="container">
-        <div class="circle-container">
-            <div class="circle">
-                <button id="close">
-                    <i class="fas fa-times"></i>
-                </button>
-                <button id="open">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
 
-        <div class="content">
-            <h1>Portfolio</h1>
-            <small></small>
-            <p>Welcome! This website is currently a work in progress. For the time being, please
-                feel free to look at my other website projects!</p>
-            <ul>
-                <li><a href="./DadJokes/index.html">API Dad Joke Generator</a></li>
-                <li><a href="./ExpandingCards/index.html">Expanding Cards</a></li>
-                <li><a href="./FAQCollapse/index.html">FAQ Collapse</a></li>
-                <li><a href="./FormWave/index.html">Form Wave</a></li>
-                <li><a href="./HiddenSearch/">Hidden Search Bar</a></li>
-                <li><a href="./KeyBoxes/index.html">Key Boxes</a></li>
-                <li><a href="./LoadBlur/index.html">Blur Loading</a></li>
-                <li><a href="./ProgressSteps/">Progress Steps</a></li>
-                <li><a href="./Randomizer/index.html">Randomizer</a></li>
-                <li><a href="./ScrollAnimation/">Scroll Animation</a></li>
-                <!--<li><a href="./SoundBoard/index.html">Soundboard</a></li>-->
-                <li><a href="./SplitLanding/index.html">Split Landing</a></li>
-                <li><a href="./AnimatedNav/index.html">Animated Navigation</a></li>
-            </ul>
-            <img src="https://cdn-images-1.medium.com/max/2000/1*YCDChDgkpiBFuOUNLLiUlw.gif" alt="BG" />
-        </div>
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>Trials and Tribulations</b></h1>
+  <p>Welcome to the blog of <span class="w3-tag">Vincent Pham</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="/w3images/woods.jpg" alt="Nature" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Terraform</b></h3>
+      <h5>A dive into the mind of a person learning how to set up Terraform on GCP for the first time</h5>
     </div>
 
-    <nav>
-        <ul>
-            <li><i class="fas fa-home"></i>Home</li>
-            <li><i class="fas fa-user-alt"></i>About</li>
-            <li><i class="fas fa-envelope"></i><a href="mailto: vincentdpham@gmail.com">Contact</a></li>
-            
-        </ul>
-    </nav>
-    <script src="script.js"></script>
+    <div class="w3-container">
+        <ol>
+            <li>Create GCP account, utilize 90 days of free tier stuff. I also created a new project called 'Terraform', though feel free to call it whatever you want, or even stick with the original project name given.</li>
+            <li>Navigate to the 'Compute Engine' for the first time, which will result in loading time. Once complete. create a compute instance under 'Compute Engine'. Using Debian Linux 10 Buster. Picked LA region since it was close enough.</li>
+            <li>Perform update/upgrade with apt-get</li>
+        </ol>      
+    </div>
+  </div>
+  <hr>
+
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="/w3images/bridge.jpg" alt="Norway" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Teamcity</b></h3>
+      <h5>Teamcity again??</h5>
+    </div>
+
+    <div class="w3-container">
+      <p>I had originally set up a teamcity server on my AWS environment, however, for the purpose of improving my GCP skills,
+          but also refreshing my Teamcity skills, I've decided to set this up in GCP.
+      </p>
+      
+    </div>
+  </div>
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="/w3images/avatar_g.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>Vincent Pham</b></h4>
+      <p>Don't mind me, just logging all the stuff I've been doing here. Here, look at some 
+          random projects I did:
+      </p>
+      <ul>
+        <li><a href="./DadJokes/">API Dad Joke Generator</a></li>
+        <li><a href="./ExpandingCards/">Expanding Cards</a></li>
+        <li><a href="./FAQCollapse/">FAQ Collapse</a></li>
+        <li><a href="./FormWave/">Form Wave</a></li>
+        <li><a href="./HiddenSearch/">Hidden Search Bar</a></li>
+        <li><a href="./KeyBoxes/">Key Boxes</a></li>
+        <li><a href="./LoadBlur/">Blur Loading</a></li>
+        <li><a href="./ProgressSteps/">Progress Steps</a></li>
+        <li><a href="./Randomizer/">Randomizer</a></li>
+        <li><a href="./ScrollAnimation/">Scroll Animation</a></li>
+        <li><a href="./RotateNav/">Rotate Navigation</a></li>
+        <!--<li><a href="./SoundBoard/index.html">Soundboard</a></li>-->
+        <li><a href="./SplitLanding/">Split Landing</a></li>
+        <li><a href="./AnimatedNav/">Animated Navigation</a></li>
+    </ul>
+    </div>
+  </div><hr>
+  
+  
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+
+
 </body>
 </html>
