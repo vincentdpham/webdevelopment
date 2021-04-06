@@ -27,8 +27,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-col l8 s12">
   <!-- Blog entry -->
   <div class="w3-card-4 w3-margin w3-white">
-    <img src="/w3images/woods.jpg" alt="Nature" style="width:100%">
-    <div class="w3-container">
+      <div class="w3-container">
       <h3><b>Terraform</b></h3>
       <h5>A dive into the mind of a person learning how to set up Terraform on GCP for the first time</h5>
     </div>
@@ -38,14 +37,28 @@ and is wrapped around the whole page content, except for the footer in this exam
             <li>Create GCP account, utilize 90 days of free tier stuff. I also created a new project called 'Terraform', though feel free to call it whatever you want, or even stick with the original project name given.</li>
             <li>Navigate to the 'Compute Engine' for the first time, which will result in loading time. Once complete. create a compute instance under 'Compute Engine'. Using Debian Linux 10 Buster. Picked LA region since it was close enough.</li>
             <li>Perform update/upgrade with apt-get</li>
+            <li>Follow tutorial here: <a href="https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/gcp-get-started">Install Terraform</a></li>
+            <li>Run curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -</li>
+            <li>Attempted sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main", however, apt-add-repository was not a valid command. I then googled 'apt-add-repository', which led me to this <a href="https://phoenixnap.com/kb/add-apt-repository-command-not-found-ubuntu">page</a></li>
+            <li>Ran this command sudo apt-get install software-properties-common</li>
+            <li>Reran previous apt-add-repository, and now it works fine</li>
+            <li>Ran the following without any issues: sudo apt-get update && sudo apt-get install terraform</li>
+            <li>Running terraform -help resulted in the expected help documentation, showing that installation was successful.</li>
+            <li>Ran terraform -install-autocomplete which helps with typing out commands by pressing tab to autocomplete.</li>
+            <li>Forgot command on how to restart system. Smh. It's systemctl reboot. However, I now need root password, which I don't know. So as a quick workaround, I went back to the terminal, clicked on the vertical 3 dots, and clicked stop and then start. I almost clicked 'reset', however, I believe this means reset everything back to initial state, which is not what I'm looking for. Should definitely know what my password is though.</li>
+            <li>Googled 'gcp linux root password' and came to this <a href="https://stackoverflow.com/questions/35016795/get-root-password-for-google-cloud-engine-vm">page</a></li>
+            <li>Used sudo passwd and created a new password. Tried systemctl reboot with new password and this time it works. Yay!</li>
+            <li>Testing autocomplete by typing 'terraform -' and then pressing tab, which then shows all my possible options. Typing 'terraform -h' then tab autocompletes it to 'terraform -help', which means it's working.</li>
+            <li>As I will not be focusing on Docker at the moment, and the example used in the tutorial is pretty simple, I will be moving on to the next tutorial <a href="https://learn.hashicorp.com/tutorials/terraform/google-cloud-platform-build?in=terraform/gcp-get-started">page</a></li>
+            <li>As I already completed the GCP Project and Compute Engine portion already on this page, I will move on with the GCP service account key.</li>
+            <li>To Be Continued...</li>
         </ol>      
     </div>
   </div>
   <hr>
 
-  <!-- Blog entry -->
+  <!-- Blog entry 
   <div class="w3-card-4 w3-margin w3-white">
-  <img src="/w3images/bridge.jpg" alt="Norway" style="width:100%">
     <div class="w3-container">
       <h3><b>Teamcity</b></h3>
       <h5>Teamcity again??</h5>
@@ -58,17 +71,16 @@ and is wrapped around the whole page content, except for the footer in this exam
       
     </div>
   </div>
-<!-- END BLOG ENTRIES -->
+ END BLOG ENTRIES -->
 </div>
 
 <!-- Introduction menu -->
 <div class="w3-col l4">
   <!-- About Card -->
   <div class="w3-card w3-margin w3-margin-top">
-  <img src="/w3images/avatar_g.jpg" style="width:100%">
     <div class="w3-container w3-white">
       <h4><b>Vincent Pham</b></h4>
-      <p>Don't mind me, just logging all the stuff I've been doing here. Here, look at some 
+      <p>Don't mind me, just logging random stuff I've been doing here. Here, look at some 
           random projects I did:
       </p>
       <ul>
